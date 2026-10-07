@@ -1,0 +1,14 @@
+# Thong tin nhay cam
+.env
+.env.*
+!.env.example
+ 
+# Thu muc rac
+node_modules/
+npm-debug.log*
+logs/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
