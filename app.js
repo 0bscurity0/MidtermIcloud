@@ -18,7 +18,15 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: false }));
 
-// ===== SESSION (nhanh feature/session se bo sung o day) =====
+// ===== SESSION: luu tren MongoDB Atlas =====
+app.use(require('./config/session'));
+
+app.use((req, res, next) => {
+  req.session.visits = (req.session.visits || 0) + 1;
+  res.locals.visits = req.session.visits;
+  res.locals.sessionId = req.sessionID.slice(0, 8);
+  next();
+});
 
 
 app.use('/', require('./routes/books'));
