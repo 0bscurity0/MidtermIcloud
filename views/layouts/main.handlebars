@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý Sách</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 16px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f0f0f0; }
+    .error { color: #b00020; margin: 10px 0; }
+    input { padding: 6px; margin: 4px 0 12px; width: 100%; box-sizing: border-box; }
+    button { padding: 8px 16px; }
+    footer { margin-top: 40px; padding-top: 12px; border-top: 1px solid #ccc; font-size: 14px; color: #444; }
+  </style>
+</head>
+<body>
+  <nav><a href="/">Danh sách sách</a> | <a href="/add">Thêm sách mới</a></nav>
+  <h1>Quản lý Sách</h1>
+  {{{body}}}
+  <footer>
+    <div>Họ tên: <strong>{{student.name}}</strong> | MSSV: <strong>{{student.id}}</strong> | VAT áp dụng: <strong>{{student.vat}}%</strong></div>
+    {{#if visits}}<div>Phiên: {{sessionId}} | Số lượt truy cập trong phiên: {{visits}}</div>{{/if}}
+  </footer>
+</body>
+</html>
