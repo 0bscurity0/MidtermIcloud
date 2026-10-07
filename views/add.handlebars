@@ -1,0 +1,13 @@
+<h2>Thêm sách mới</h2>
+{{#if error}}<div class="error">{{error}}</div>{{/if}}
+<form method="POST" action="/add">
+  <label>Mã sách (bắt buộc bắt đầu bằng {{student.prefix}})</label>
+  <input name="maSach" value="{{form.maSach}}" required>
+  <label>Tên sách</label>
+  <input name="tenSach" value="{{form.tenSach}}" required>
+  <label>Tác giả</label>
+  <input name="tacGia" value="{{form.tacGia}}">
+  <label>Giá gốc (VNĐ)</label>
+  <input name="giaGoc" type="number" min="0" step="any" value="{{form.giaGoc}}" required>
+  <button type="submit">Lưu</button>
+</form>

@@ -1,0 +1,22 @@
+<h2>Danh sách sách</h2>
+{{#if books.length}}
+<table>
+  <thead>
+    <tr><th>Mã sách</th><th>Tên sách</th><th>Tác giả</th><th>Giá gốc (VNĐ)</th><th>VAT</th><th>Giá sau thuế (VNĐ)</th></tr>
+  </thead>
+  <tbody>
+    {{#each books}}
+    <tr>
+      <td>{{this.maSach}}</td>
+      <td>{{this.tenSach}}</td>
+      <td>{{this.tacGia}}</td>
+      <td>{{money this.giaGoc}}</td>
+      <td>{{this.vat}}%</td>
+      <td>{{money this.giaSauThue}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+<p>Chưa có sách nào.</p>
+{{/if}}
